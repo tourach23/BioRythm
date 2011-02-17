@@ -11,7 +11,6 @@ public class BioIO
 			if(Character.isWhitespace(temp[i]))counter++;
 		}
 		String t = (counter+1)+" "+cycle+" "+s;
-		System.out.println(t);
 		Scanner readIn = new Scanner(t);
 		int arrayLength = readIn.nextInt();
 		int bioCycle = readIn.nextInt();
