@@ -1,3 +1,23 @@
+/**********************************************************************
+ * Converts a given birthday in the format "MM,dd,yyyy" into the days
+ * old.
+ * @method monthToDays(int currentMonth,int birthMonth) - from birth 
+ * month to current month, includes all days in birth month, does not 
+ * include current month.
+ * @method yearToDays(int currentYear, int birthYear,
+ *						int currentMonth,int birthMonth) - from birthday
+ * to birthday * 365 + leapyear.
+ * @method dayCalc(int birthDay, int currentDay) - subtracts days before
+ * birthday from days passed in current month.
+ * @method dayWork(String birthday) - takes the given string in the above
+ * format converts into int's and runs the above methods to
+ * output the total days old a person is.
+ * 
+ * @version 1.0
+ * @author Todd Swindoll
+ *
+ *********************************************************************/
+
 public class YearToDays
 {
 	public static int monthToDays(int currentMonth,int birthMonth)
@@ -5,7 +25,8 @@ public class YearToDays
 		/****************************************************************
 		 * from birth month to current month
 		 * 
-		 * includes all days for birth month but not the current month
+		 * includes all days for birth month 
+		 * does NOT include the current month
 		 ***************************************************************/
 		int[] dayPerMonth = {31,28,31,30,31,30,31,31,30,31,30,31};
 		int monthCounterCheck = 0, totalDaysPerMonth = 0;
@@ -34,10 +55,6 @@ public class YearToDays
 		return totalDaysPerMonth;
 	}
 	/**************************************************************************
-	 * get the total number of days covered from current year to previous year
-	 * with regards to whether or not the birthday has passed or not, and add
-	 * the appropriate number of days for leapyear.
-	 * 
 	 * from birthday to birthday * 365 + leapyear
 	 *************************************************************************/
 	public static int yearToDays(int currentYear, int birthYear,
@@ -56,16 +73,12 @@ public class YearToDays
 		return totalDays;
 	}
 	/***********************************************************************
-	 * get the number of days that have passed with regard to how many days
-	 * are left in the birth month.
-	 * 
 	 * subtracts out the days up to the birthday in the birth month and adds
 	 * how many days are passed in the current month
 	 **********************************************************************/
 	public static int dayCalc(int birthDay, int currentDay)
 	{
-		int totaldays = 0;
-		totaldays = currentDay - birthDay;
+		int totaldays = currentDay - birthDay;
 		return totaldays;
 	}
 	

@@ -2,18 +2,11 @@ public class LeapYear
 {
 	public static boolean isLeapYear(int date)
 	{
-		if (date %4 == 0 && date%100 != 0)
+		if ((date %4 == 0 && date%100 != 0)||(date % 4 == 0 && date %100 == 0 && date %400 == 0))
 			{
 			return true;
 			}
-		if(date % 4 == 0 && date %100 == 0 && date %400 == 0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		else return false;
 	}
 	public static int leapYearCount(int previousYear)
 	{
@@ -36,7 +29,7 @@ public class LeapYear
 		{
 			if(yearArray[i]==true) counter++;
 		}
-		if(yearArray[N-1]==true && currentMonth < 3)
+		if(yearArray[N-1] && currentMonth < 3)
 		{
 			counter--;
 		}
@@ -59,7 +52,7 @@ public class LeapYear
 		{
 			int testYear = thisYear;
 			work = true;
-			while(work != false)
+			while(work)
 			{
 				System.out.println("TestDate is "+testYear+" is leapyear? "+isLeapYear(testYear));
 				testYear--;
