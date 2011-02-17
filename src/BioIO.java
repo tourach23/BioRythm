@@ -3,7 +3,16 @@ public class BioIO
 {
 	public static void IO(String s)
 	{
-		Scanner readIn = new Scanner(s);
+		int cycle = 33;
+		int counter = 0;
+		char[] temp = s.toCharArray();
+		for(int i = 0;i<temp.length;i++)
+		{
+			if(Character.isWhitespace(temp[i]))counter++;
+		}
+		String t = (counter+1)+" "+cycle+" "+s;
+		System.out.println(t);
+		Scanner readIn = new Scanner(t);
 		int arrayLength = readIn.nextInt();
 		int bioCycle = readIn.nextInt();
 		int i = 0;
@@ -22,7 +31,7 @@ public class BioIO
 	}
 	public static void main(String[] args)
 	{
-		String s = "4 33 01,01,1920 07,28,1983 01,31,1985 2,22,1979";
+		String s = "01,01,1920 07,28,1983 01,31,1985 02,22,1979";
 		IO(s);
 	}
 }
