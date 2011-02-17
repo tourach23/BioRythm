@@ -17,11 +17,13 @@ public class LeapYear
 	}
 	public static int leapYearCount(int previousYear)
 	{
+		int currentMonth = DateCall.getMonth();
 		int thisYear = DateCall.getYear();
 		int counter = 0;
 		boolean[] yearArray= new boolean[thisYear - (previousYear+1)];
+		int N = yearArray.length;
 		//+1 to include the current year
-		for(int i = 0;i < yearArray.length;i++)
+		for(int i = 0;i < N;i++)
 		{
 			yearArray[i] = isLeapYear(previousYear);
 			previousYear++;
@@ -30,9 +32,13 @@ public class LeapYear
 				break;
 			}
 		}
-		for(int i = 0;i < yearArray.length;i++)
+		for(int i = 0;i < N;i++)
 		{
 			if(yearArray[i]==true) counter++;
+		}
+		if(yearArray[N-1]==true && currentMonth < 3)
+		{
+			counter--;
 		}
 		return counter;
 	}

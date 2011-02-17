@@ -31,8 +31,9 @@ public class Bio
 	public static void main(String[] args)
 	{//command line input requires cycle length, then age in days separated by a space
 		int cycle = Integer.parseInt(args[0]);
-		int birthday = Integer.parseInt(args[1]);
-		double score = bio(cycle,birthday);
+		int daysOld = YearToDays.dayWork(args[1]);
+		System.out.println(daysOld);
+		double score = bio(cycle,daysOld);
 		System.out.println(score);
 		
 	}
