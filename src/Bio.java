@@ -22,7 +22,7 @@ public class Bio
 	/***********************************************************
 	 *	Biorythm calculations
 	 **********************************************************/
-	private static double bio(int cycle, double age)
+	public static double bio(int cycle, double age)
 	{
 		double score = 100 * Math.sin ( 2*Math.PI*(180/Math.PI) *(age / cycle));
 		return score;
